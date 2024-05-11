@@ -1,0 +1,42 @@
+﻿<Window x:Class="ZEWS.Xaml.Statistic"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZEWS.Xaml"
+        mc:Ignorable="d"
+        Title="Statistic" Height="450" Width="800" Background="#60768f">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Статистика продаж" FontFamily="Bahnschrift Condensed" FontSize="18" HorizontalAlignment="Center" Margin="0,20,0,10"/>
+        <ComboBox x:Name="roomTypeComboBox" FontFamily="Bahnschrift Condensed" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10"
+                  Width="200" FontSize="16" SelectionChanged="RoomTypeComboBox_SelectionChanged">
+            <!-- Placeholder -->
+            <ComboBoxItem IsEnabled="False" IsSelected="True" FontFamily="Bahnschrift Condensed">Выберите тип номера</ComboBoxItem>
+            <!-- Добавьте элементы списка из API -->
+        </ComboBox>
+        <!-- Продажи за день -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,20">
+            <TextBlock FontFamily="Bahnschrift Condensed" Text="Продажи за день: " FontSize="18" Margin="0,0,10,0"/>
+            <TextBlock x:Name="salesDayTextBlock" FontSize="18"/>
+        </StackPanel>
+
+        <!-- Продажи за месяц -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,20">
+            <TextBlock FontFamily="Bahnschrift Condensed" Text="Продажи за месяц: " FontSize="18" Margin="0,0,10,0"/>
+            <TextBlock x:Name="salesMonthTextBlock" FontSize="18"/>
+        </StackPanel>
+
+        <!-- Продажи за год -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,20">
+            <TextBlock FontFamily="Bahnschrift Condensed" Text="Продажи за год: " FontSize="18" Margin="0,0,10,0"/>
+            <TextBlock x:Name="salesYearTextBlock" FontSize="18"/>
+        </StackPanel>
+    </Grid>
+</Window>

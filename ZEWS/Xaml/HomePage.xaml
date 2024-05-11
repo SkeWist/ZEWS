@@ -1,0 +1,34 @@
+﻿<Page x:Class="ZEWS.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZEWS"
+      mc:Ignorable="d" 
+      Height="550" Width="800"
+      Title="HomePage" Background="#60768f">
+
+    <Grid>
+        <!-- Logo -->
+        <Image Source="/Img/Logo.png" Height="100" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <!-- Заголовок -->
+        <TextBlock HorizontalAlignment="Center" FontFamily="Bahnschrift Condensed" FontSize="24" Margin="0 20 0 0">Панель управления</TextBlock>
+
+        <!-- Имя пользователя -->
+        <TextBlock x:Name="FIO" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 240" FontFamily="Bahnschrift Condensed" FontSize="32"></TextBlock>
+
+        <!-- Кнопки -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 40">
+            <Button Height="40" Width="400" Margin="0 0 0 10" Background="#003153" Foreground="White" Content="Номера гостиницы" FontFamily="Bahnschrift Condensed" FontSize="18" Click="Button_Click_HotelRoomsList"></Button>
+            <Button Height="40" Width="400" Margin="0 0 0 10" Background="#003153" Foreground="White" Content="Пользователи системы" FontFamily="Bahnschrift Condensed" FontSize="18" Click="Button_Click_ListUsers"></Button>
+            <Button Height="40" Width="400" Margin="0 0 0 10" Background="#003153" Foreground="White" Content="Список услуг" FontFamily="Bahnschrift Condensed" FontSize="18"></Button>
+            <Button Height="40" Width="400" Margin="0 0 0 10" Background="#003153" Foreground="White" Content="Список бронирований" FontFamily="Bahnschrift Condensed" FontSize="18" Click="Button_Click_ListReservations"></Button>
+            <Button Height="40" Width="400" Margin="0 0 0 10" Background="#003153" Foreground="White" Content="Модерация отзывов" FontFamily="Bahnschrift Condensed" FontSize="18" Click="Button_Click_ListModeration"></Button>
+            <Button Height="40" Width="400" Margin="0 0 0 10" Background="#003153" Foreground="White" Content="Статистика продаж" FontFamily="Bahnschrift Condensed" FontSize="18" Click="Button_Click_ListStatistic"></Button>
+        </StackPanel>
+
+        <!-- Кнопка выхода -->
+        <Button Height="50" Width="100" VerticalAlignment="Top"  Background="#003153" Foreground="White" BorderBrush="Black" HorizontalAlignment="Right" Margin="0,10,50,0" Content="Выход" FontFamily="Bahnschrift Condensed" FontSize="18" Click="Button_Click"></Button>
+    </Grid>
+</Page>

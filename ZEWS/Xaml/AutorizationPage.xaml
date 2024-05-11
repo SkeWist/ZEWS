@@ -1,0 +1,24 @@
+﻿<Page x:Class="ZEWS.Xaml.AutorizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZEWS.Xaml"
+      mc:Ignorable="d" 
+      Height="420" Width="300"
+      Title="AutorizationPage" Background="#60768f">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="/Img/Logo.png" Width="100" VerticalAlignment="Top" Margin="98,-1,102,0" Height="84"/>
+        <Label Grid.Row="0" HorizontalAlignment="Left" Margin="50,0,0,124" VerticalAlignment="Bottom" FontSize="18" Height="42" Width="118" FontFamily="Bahnschrift Condensed" Grid.RowSpan="2" Content="Телефон" ></Label>
+        <Label Grid.Row="1" HorizontalAlignment="Left" Margin="50,0,0,65" VerticalAlignment="Bottom" FontSize="18" Height="42" Width="118" FontFamily="Bahnschrift Condensed" Content="Пароль"/>
+        <TextBox x:Name="loginTextBox" Text="98887776655" VerticalContentAlignment="Center" BorderBrush="Black" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="200" FontFamily="Bahnschrift Condensed" FontSize="18" />
+        <PasswordBox x:Name="passwordTextBox" Password="admin123" BorderBrush="Black" Grid.Row="1" Margin="0,10,0,0" Height="30" Width="200" VerticalContentAlignment="Center" FontFamily="Bahnschrift Condensed" FontSize="16" />
+        <Button Content="Войти" Grid.Row="2" BorderBrush="#c7d1db" Background="#003153" Height="40" Width="140" FontFamily="Bahnschrift Condensed" FontSize="18" Foreground="White" Click="Button_Click"  />
+    </Grid>
+</Page>

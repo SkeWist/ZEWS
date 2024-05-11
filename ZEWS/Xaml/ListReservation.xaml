@@ -1,0 +1,57 @@
+﻿<Page x:Class="ZEWS.Xaml.ListReservation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ZEWS.Xaml"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ListReservation" Background="#60768f">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Bahnschrift Condensed" Grid.ColumnSpan="2" FontSize="24" Margin="0 20 0 0">Список бронирований</TextBlock>
+        <DataGrid x:Name="reservationsListBox" ItemsSource="{Binding}" Grid.ColumnSpan="2" AutoGenerateColumns="False" FontFamily="Bahnschrift Condensed" FontSize="18" IsReadOnly="True" CanUserAddRows="False" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,138,0,0" Width="600" Height="200">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="ФИО пользователя" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button Content="{Binding User.GetFIO}" Click="EditUser_Click" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Tag="{Binding User.id}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Дата входа" Binding="{Binding Entry}" Width="*" />
+                <DataGridTextColumn Header="Дата выхода" Binding="{Binding Exit}" Width="*" />
+                <DataGridTemplateColumn Header="Номер комнаты" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button Content="{Binding Room.Name}" Click="EditRoom_Click" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center" Tag="{Binding Room.Id}" Foreground="#002F55"></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Действия" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Image Source="/Img/pencil.png" Width="20" Height="20" Stretch="Uniform" Margin="5"
+                                MouseLeftButtonDown="EditReservation_click" Tag="{Binding}"/>
+                                <Image Source="/Img/trash-2.png" Width="20" Height="20" Stretch="Uniform" Margin="5"
+                                MouseLeftButtonDown="DeleteReservation_click" Tag="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Column="1"  Height="50" Width="100" VerticalAlignment="Top"  BorderBrush="Black" HorizontalAlignment="Right" Margin="0,10,50,0" Content="Назад" FontFamily="Bahnschrift Condensed" FontSize="18" Click="BackButton_Click" Background="#003153" Foreground="White"></Button>
+        <Button Grid.Column="0" Height="50" Width="150" VerticalAlignment="Bottom"  BorderBrush="Black" HorizontalAlignment="Right" Margin="0,0,325,10" Content="Создать бронирование" FontFamily="Bahnschrift Condensed" FontSize="18" Click="CreateButton_Click" Grid.ColumnSpan="2" Background="#003153" Foreground="White"></Button>
+    </Grid>
+</Page>
